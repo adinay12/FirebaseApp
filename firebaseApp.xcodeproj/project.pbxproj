@@ -13,6 +13,7 @@
 		F67830842ECE780900A39480 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F67830832ECE780900A39480 /* FirebaseDatabase */; };
 		F67830862ECE780900A39480 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F67830852ECE780900A39480 /* FirebaseFirestore */; };
 		F67830882ECE780900A39480 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = F67830872ECE780900A39480 /* FirebaseStorage */; };
+		F67830902ECE8BE600A39480 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F678308F2ECE8BE600A39480 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 				F678307D2ECE76E100A39480 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				F67830822ECE780900A39480 /* FirebaseCore in Frameworks */,
 				F67830842ECE780900A39480 /* FirebaseDatabase in Frameworks */,
+				F67830902ECE8BE600A39480 /* SnapKit in Frameworks */,
 				F67830862ECE780900A39480 /* FirebaseFirestore in Frameworks */,
 				F67830802ECE780900A39480 /* FirebaseAuth in Frameworks */,
 				F67830882ECE780900A39480 /* FirebaseStorage in Frameworks */,
@@ -107,6 +109,7 @@
 				F67830832ECE780900A39480 /* FirebaseDatabase */,
 				F67830852ECE780900A39480 /* FirebaseFirestore */,
 				F67830872ECE780900A39480 /* FirebaseStorage */,
+				F678308F2ECE8BE600A39480 /* SnapKit */,
 			);
 			productName = firebaseApp;
 			productReference = F6F64F682ECE3E63001720CB /* firebaseApp.app */;
@@ -138,6 +141,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F678307B2ECE76E100A39480 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F678308E2ECE8BE600A39480 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F6F64F692ECE3E63001720CB /* Products */;
@@ -385,6 +389,14 @@
 				minimumVersion = 12.6.0;
 			};
 		};
+		F678308E2ECE8BE600A39480 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,6 +429,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F678307B2ECE76E100A39480 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		F678308F2ECE8BE600A39480 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F678308E2ECE8BE600A39480 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

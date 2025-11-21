@@ -16,6 +16,8 @@ enum WindowCase {
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
+    private let authService = AuthService()
+    
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         NotificationCenter.default.addObserver(self, selector: #selector(routeVC(notification: )), name:
@@ -24,7 +26,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: scene)
         
-        self.window?.rootViewController = windowManager(vc: .reg)
+        if authService.isLogin() {
+            self.window?.rootViewController = windowManager(vc: .home)
+        } else {
+            self.window?.rootViewController = windowManager(vc: .reg)
+        }
+        
         
         self.window?.makeKeyAndVisible()
     }
@@ -32,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private func windowManager (vc: WindowCase) -> UIViewController {
         switch vc {
         case .login:
-            return LoginView()
+            return LoginViewController()
         case .reg:
             return RegView()
         case .home:
