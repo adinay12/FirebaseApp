@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F65839942ED4D2BE0028B159 /* IQKeyboardToolbarManager in Frameworks */ = {isa = PBXBuildFile; productRef = F65839932ED4D2BE0028B159 /* IQKeyboardToolbarManager */; };
 		F678307D2ECE76E100A39480 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F678307C2ECE76E100A39480 /* FirebaseInAppMessaging-Beta */; };
 		F67830802ECE780900A39480 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F678307F2ECE780900A39480 /* FirebaseAuth */; };
 		F67830822ECE780900A39480 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = F67830812ECE780900A39480 /* FirebaseCore */; };
@@ -47,6 +48,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F678307D2ECE76E100A39480 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				F65839942ED4D2BE0028B159 /* IQKeyboardToolbarManager in Frameworks */,
 				F67830822ECE780900A39480 /* FirebaseCore in Frameworks */,
 				F67830842ECE780900A39480 /* FirebaseDatabase in Frameworks */,
 				F67830902ECE8BE600A39480 /* SnapKit in Frameworks */,
@@ -110,6 +112,7 @@
 				F67830852ECE780900A39480 /* FirebaseFirestore */,
 				F67830872ECE780900A39480 /* FirebaseStorage */,
 				F678308F2ECE8BE600A39480 /* SnapKit */,
+				F65839932ED4D2BE0028B159 /* IQKeyboardToolbarManager */,
 			);
 			productName = firebaseApp;
 			productReference = F6F64F682ECE3E63001720CB /* firebaseApp.app */;
@@ -142,6 +145,7 @@
 			packageReferences = (
 				F678307B2ECE76E100A39480 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F678308E2ECE8BE600A39480 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				F65839922ED4D2BE0028B159 /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F6F64F692ECE3E63001720CB /* Products */;
@@ -381,6 +385,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F65839922ED4D2BE0028B159 /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardToolbarManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 		F678307B2ECE76E100A39480 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -400,6 +412,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F65839932ED4D2BE0028B159 /* IQKeyboardToolbarManager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F65839922ED4D2BE0028B159 /* XCRemoteSwiftPackageReference "IQKeyboardToolbarManager" */;
+			productName = IQKeyboardToolbarManager;
+		};
 		F678307C2ECE76E100A39480 /* FirebaseInAppMessaging-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F678307B2ECE76E100A39480 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

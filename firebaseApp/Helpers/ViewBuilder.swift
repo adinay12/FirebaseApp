@@ -24,7 +24,7 @@ class ViewBuilder{
             $0.backgroundColor = .gray
             $0.placeholder = placeholder
             $0.leftViewMode = .always
-            $0.isSecureTextEntry = isPassword
+//            $0.isSecureTextEntry = isPassword
             $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
             $0.layer.cornerRadius = 10
             return $0

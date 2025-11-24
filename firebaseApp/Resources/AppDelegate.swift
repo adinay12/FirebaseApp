@@ -7,11 +7,15 @@
 
 import UIKit
 import FirebaseCore
+import IQKeyboardToolbarManager
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        IQKeyboardToolbarManager.shared.isEnabled = true
+//        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "Готово"
         FirebaseApp.configure()
         return true
     }
