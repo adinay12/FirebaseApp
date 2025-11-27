@@ -11,6 +11,7 @@ import SnapKit
 class AddNoteView: UIViewController {
     
     private let viewBuilder = ViewBuilder()
+    private let noteService = NoteService()
     var note: Note?
     var image: UIImage?
     
@@ -28,8 +29,33 @@ class AddNoteView: UIViewController {
     
     lazy var saveAction = UIAction { [weak self] _ in
         guard let self = self else { return }
-       
+        
+        let header = noteHeader.text ?? ""
+        let noteText = noteText.text ?? ""
+        let noteItem = Note(header: header, note: noteText, date: Date(), image: nil)
+        
+        if note == nil {
+            noteService.createNote(note: noteItem) { result in
+                switch result {
+                case .success(let isAdd):
+                    if isAdd {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                    
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
+        } else {
+            noteService.updateNote(noteId: note?.id ?? "", note: noteItem) { isAdd in
+                if isAdd {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
+    
+    
     
     lazy var saveBtn = viewBuilder.ctreateButton(
         frame: .zero,
@@ -43,6 +69,9 @@ class AddNoteView: UIViewController {
         
         view.backgroundColor = .white
         title = "Add note"
+        
+        noteHeader.text = note?.header
+        noteText.text = note?.note
         
         setupLayout()
     }

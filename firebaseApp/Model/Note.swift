@@ -7,18 +7,19 @@
 
 import Foundation
 
-struct Note {
+struct Note: Identifiable {
     var id: String = UUID().uuidString
-    var header: String?
-    var note: String?
-    var image: String?
+    let header: String?
+    let note: String?
+    let date: Date?
+    let image: String?
     
     
-    static func example() -> [Note] {
-        [
-            Note(header: "Hello", note: "Word", image: ""),
-            Note(header: "Hello", note: "Word", image: ""),
-            
-        ]
-    }
+//    static func example() -> [Note] {
+//        [
+//            Note(header: "Hello", note: "Word", image: ""),
+//            Note(header: "Hello", note: "Word", image: ""),
+//            
+//        ]
+//    }
 }
