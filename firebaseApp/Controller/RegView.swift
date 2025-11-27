@@ -65,7 +65,7 @@ class RegView: UIViewController {
            let name = self.nameTextField.text
            
            
-           let user = UserData(email: email ?? "", password: passwd ?? "")
+           let user = UserData(email: email ?? "", password: passwd ?? "", name: name)
            service.createNewUser(user: user) { result in
                switch result {
                case .success(let success):

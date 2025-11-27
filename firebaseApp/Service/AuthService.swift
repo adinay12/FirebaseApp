@@ -5,7 +5,7 @@
 //  Created by Adinay on 21/11/25.
 //
 
-import Firebase
+import FirebaseFirestore
 import FirebaseAuth
 import Foundation
 
@@ -27,12 +27,43 @@ class AuthService {
                 return
             }
             result?.user.sendEmailVerification()
-            signOut()
-            comletion(.success(true))
+            
+            
+            guard let uid = result?.user.uid else { return }
+            
+            setUserData(user: user, userId: uid) { [weak self] isAdd in
+                if isAdd {
+                    self?.signOut()
+                    comletion(.success(true))
+                } else {
+                    return
+                }
+            }
+            
+            
+            // save name
             
             //            result?.user.uid
         }
     }
+    
+    
+    private func setUserData(user: UserData, userId: String, comletion: @escaping (Bool) -> Void) {
+//        print(Auth.auth().currentUser?.uid)
+        Firestore.firestore()
+            .collection("users")
+            .document(userId)
+            .setData(["name": user.name ?? "", "email": user.email]) { err in
+                guard err == nil else {
+                    comletion(false)
+                    return
+                }
+                
+                comletion(true)
+            }
+    }
+    
+    
     
     
     func singIn(user: UserData, comletion: @escaping (Result<Bool, Error>) -> Void) {
